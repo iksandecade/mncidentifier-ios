@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "Face"
+  spec.name         = "MNCIdentifier"
   spec.version      = "0.1.0"
   spec.summary      = "Apps that you build with our SDK work easier to using face detection for identifiying liveness."
 
@@ -19,15 +19,15 @@ Pod::Spec.new do |spec|
 
   spec.public_header_files = "Face.framework/Headers/*.h"
   spec.source_files = "Face.framework/Headers/*.h"
-  spec.vendored_frameworks = "Face.framework"
   
   spec.framework  = "UIKit"
 
   spec.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
 
-#   spec.subspec 'Face' do |ss|
-#     ss.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
-#   end
+  spec.subspec 'Face' do |ss|
+    # ss.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
+    spec.vendored_frameworks = "Face.framework"
+  end
 
   spec.pod_target_xcconfig = {
      'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
