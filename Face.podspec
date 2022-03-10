@@ -19,13 +19,13 @@ Pod::Spec.new do |spec|
   spec.framework  = "UIKit"
 
   spec.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
-  
-  spec.default_subspec = 'Face'
+
+#   spec.default_subspec = 'Face'
 
   spec.subspec 'Face' do |ss|
     ss.public_header_files = "Face.framework/Headers/*.h"
     ss.source_files = "Face.framework/Headers/*.h"
-    ss.vendored_frameworks = "Face.framework"
+    # ss.vendored_frameworks = "Face.framework"
   end
 
   spec.pod_target_xcconfig = {
