@@ -17,12 +17,14 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/mncinnovation/mncidentifier-ios.git", :tag => "#{spec.version}"  }
 
+  spec.public_header_files = "Face.framework/Headers/*.h"
+  spec.source_files = "Face.framework/Headers/*.h"
   spec.vendored_frameworks = "Face.framework"
   
   spec.framework  = "UIKit"
 
   spec.subspec 'Face' do |ss|
-    spec.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
+    ss.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
   end
   
 
