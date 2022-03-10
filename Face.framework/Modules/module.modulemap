@@ -1,0 +1,6 @@
+framework module Face {
+  umbrella header "Face.h"
+
+  export *
+  module * { export * }
+}
