@@ -13,20 +13,19 @@ Pod::Spec.new do |spec|
   spec.author       = { "Ihksan Sukmawan" => "ihksan.sukmawan@mncgroup.com" }
 
   spec.platform     = :ios
-  spec.platform     = :ios, "11.0"
 
   spec.source       = { :git => "https://github.com/mncinnovation/mncidentifier-ios.git", :tag => "#{spec.version}"  }
 
-  spec.public_header_files = "Face.framework/Headers/*.h"
-  spec.source_files = "Face.framework/Headers/*.h"
-  
   spec.framework  = "UIKit"
 
   spec.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
+  
+  spec.default_subspec = 'Face'
 
   spec.subspec 'Face' do |ss|
-    # ss.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
-    spec.vendored_frameworks = "Face.framework"
+    ss.public_header_files = "Face.framework/Headers/*.h"
+    ss.source_files = "Face.framework/Headers/*.h"
+    ss.vendored_frameworks = "Face.framework"
   end
 
   spec.pod_target_xcconfig = {
