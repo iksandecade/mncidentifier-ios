@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   
   spec.framework  = "UIKit"
 
-  s.subspec 'Face' do |ss|
+  spec.subspec 'Face' do |ss|
     spec.dependency 'GoogleMLKit/FaceDetection', '2.3.0'
   end
   
